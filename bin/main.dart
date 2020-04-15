@@ -1,8 +1,12 @@
 import 'package:split_icon/split_icon.dart' as split_icon;
 import 'dart:io';
 import 'package:yaml/yaml.dart';
+import 'package:io/ansi.dart';
 
 main(List<String> arguments) {
+  Platform.environment.forEach((k,v)=>print('$k $v'));
+  // 执行命令
+  // Process.run(executable, arguments);
   File pubspec = File("./pubspec.yaml");
   var pubspecDoc = loadYaml(pubspec.readAsStringSync());
   List excludes;
@@ -11,7 +15,7 @@ main(List<String> arguments) {
     excludes = pubspecDoc['flutter_icons']['excludes'];
     File packages = File('./.packages');
     if (!packages.existsSync()) {
-      print("Get the dependencies first");
+      print(yellow.wrap("${DateTime.now()}: Get the dependencies first"));
       return;
     }
     List<String> lines = packages.readAsLinesSync();
@@ -26,7 +30,7 @@ main(List<String> arguments) {
       }
     }
     if (flutterIconPath == null) {
-      print("Get the flutter_icons dependency first");
+      print(yellow.wrap("${DateTime.now()}: Get the flutter_icons dependency first"));
       return;
     }
     File flutterIconsFile = File(flutterIconPath + '/pubspec.yaml');
@@ -43,6 +47,6 @@ main(List<String> arguments) {
     print(iconMap['environment']['sdk']);
     // flutterIconsFile.writeAsStringSync(iconMap.toString());
   }
-  print('Finish the work');
+  print(green.wrap("${DateTime.now()}: Finish the work"));
 
 }
