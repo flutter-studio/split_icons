@@ -9,6 +9,7 @@ main(List<String> arguments) {
   // Platform.environment.forEach((k,v)=>print('$k $v'));
   // 执行命令
   // Process.run(executable, arguments);
+  print(green.wrap("${DateTime.now()}: The command is executing, please wait..."));
   File pubspec = File("./pubspec.yaml");
   var pubspecDoc = loadYaml(pubspec.readAsStringSync());
   File packages = File('./.packages');
@@ -45,5 +46,8 @@ main(List<String> arguments) {
     yamlString += allFonts;
   }
   flutterIconsFile.writeAsStringSync(yamlString);
+  var resDoc = loadYaml(yamlString);
+  var useFonts = List.of(resDoc['flutter']['fonts']).map((item)=>item['family']);
+  print('${DateTime.now()}: The font you are using is $useFonts');
   print(green.wrap("${DateTime.now()}: Finish the work"));
 }
