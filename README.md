@@ -7,9 +7,6 @@ flutter_icons:
     -ant 
     -mco
     ....
-
-dev_dependencies:
-  split_icon: ^0.1.0
 ```
 
 
