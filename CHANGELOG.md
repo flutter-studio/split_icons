@@ -1,4 +1,8 @@
-## 0.3.0 
+## 0.3.1
+
+- feat: 🎸 Adapt to multiple versions
+
+## 0.3.0
 
 - Add some hints
 
