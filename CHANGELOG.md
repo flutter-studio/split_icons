@@ -1,3 +1,7 @@
+## 0.3.1+1
+
+- fix some bugs
+
 ## 0.3.1
 
 - feat: 🎸 Adapt to multiple versions
