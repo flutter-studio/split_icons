@@ -1,7 +1,8 @@
-const String tempYaml = '''
+typedef YamlFunction = String Function(String);
+YamlFunction tempYaml = (String version)=> '''
 name: flutter_icons
 description: Customizable Icons for Flutter，you can use with over 3K+ icons in your flutter project
-version: 1.1.0
+version: ${version ?? '1.1.0'}
 author: flutter-studio<2534290808@qq.com>
 homepage: https://github.com/flutter-studio/flutter-icons.git
 

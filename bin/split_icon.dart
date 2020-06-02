@@ -1,4 +1,4 @@
 import 'main.dart' as m;
-main(List<String> arguments) {
+void main(List<String> arguments) {
   m.main(arguments);
 }
