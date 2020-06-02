@@ -38,7 +38,7 @@ void main(List<String> arguments) {
   // ignore: omit_local_variable_types
   File flutterIconsFile = File(flutterIconPath + '/pubspec.yaml');
   List includes;
-  var yamlString = tempYaml('');
+  var yamlString = tempYaml(flutterIconVersion);
   if (pubSpecDoc['flutter_icons'] != null &&
       pubSpecDoc['flutter_icons']['includes'] != null) {
     includes = pubSpecDoc['flutter_icons']['includes'];
