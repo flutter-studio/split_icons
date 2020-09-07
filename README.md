@@ -4,8 +4,8 @@ Add the following information to the pubspec.yaml file in the project directory
 ```
 flutter_icons:
   includes:
-    -ant 
-    -mco
+    - ant 
+    - mco
     ....
 ```
 
